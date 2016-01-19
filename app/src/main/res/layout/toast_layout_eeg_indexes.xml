@@ -22,7 +22,7 @@
     android:layout_height="wrap_content"
     android:textColor="#FFF"
     android:text=""
-    android:textSize="5dp"
+    android:textSize="10dp"
     android:layout_below="@drawable/att_red"
         />
 
