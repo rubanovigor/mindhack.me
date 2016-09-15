@@ -2,13 +2,31 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"    android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@drawable/blacksquare"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main"
     tools:context=".MainActivity">
 
+    <com.aiworker.mindhackme.BrainGifView
+        android:id="@+id/BrainGifView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="0dp"
+        android:visibility="visible"
+        />
+
+    <com.aiworker.mindhackme.GifView
+        android:id="@+id/CubeGigView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="0dp"
+        android:visibility="visible"
+        />
 
     <ToggleButton        android:id="@+id/switch_backend"
         android:layout_width="wrap_content"
@@ -42,7 +60,7 @@
         android:textOff="OFF"
         android:textOn="ON"
         android:textColor="#ffffff"
-        android:textSize="13sp"
+        android:textSize="10sp"
 
         android:visibility="visible"	/>
 
@@ -51,12 +69,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="0dp"
         android:padding="5dip"
         android:text="Neurosky Status"
         android:gravity="center_horizontal"
         android:textColor="#ffffff"
-        android:textSize="12sp" />
+        android:textSize="3sp"
+        android:visibility="invisible"  />
 
     <TextView        android:id="@+id/Att_label"
         android:layout_width="wrap_content"
@@ -163,7 +182,81 @@
         android:layout_alignParentLeft="true"
         android:background="@drawable/audio_off"
         android:layout_margin="5dp"
-        android:onClick="onSwitchAudioFeadback" />
+        android:textSize="10sp"
+        />
+
+    <ToggleButton        android:id="@+id/switch_notification"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/notif_off"
+        android:layout_margin="5dp"
+        android:textSize="10sp"
+
+        />
+
+    <SeekBar
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBarRED"
+        android:max="100"
+        android:padding="10dp"
+        android:layout_below="@+id/ib_att"
+        android:layout_toLeftOf="@+id/ib_back"
+        android:layout_toStartOf="@+id/ib_back" />
+
+    <TextView        android:id="@+id/RED_value"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:padding="5dip"
+        android:text="40"
+        android:textColor="#ffffff"
+        android:textSize="6sp"
+        android:layout_alignBottom="@+id/seekBarRED"
+        android:layout_toLeftOf="@+id/seekBarRED"
+         />
+
+    <SeekBar
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBarBLUE"
+        android:max="100"
+        android:padding="10dp"
+        android:layout_alignTop="@+id/seekBarRED"
+        android:layout_toRightOf="@+id/ib_back"
+        android:layout_toEndOf="@+id/ib_back" />
+
+    <TextView        android:id="@+id/BLUE_value"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@id/seekBarBLUE"
+        android:padding="5dip"
+        android:text="60"
+        android:textColor="#ffffff"
+        android:textSize="6sp"
+        android:layout_alignBottom="@+id/seekBarRED" />
+
+
+    <ToggleButton        android:id="@+id/switch_cs"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/switch_notification"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/cs_off"
+        android:layout_margin="5dp"
+        android:textSize="10sp"
+        />
+
+    <TextView        android:id="@+id/cs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:padding="5dip"
+        android:layout_marginBottom="15dip"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textSize="10sp"  />
 
 
 </RelativeLayout>
